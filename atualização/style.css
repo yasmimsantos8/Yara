@@ -1,0 +1,245 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background-color: #ffffff; /* Bege claro e suave, como areia fina */
+    color: #4A3E25; /* Texto marrom aquecido para combinar com o tema */
+    background-image: url("imagens/WhatsApp\ Image\ 2026-09-29\ at\ 21.26.47.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    /* Gradiente moderno simulando o amanhecer (Dourado para o Bege Sol) */
+    background: linear-gradient(135deg, #E6B800, #F4E4A1); 
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-shadow: 0 4px 15px rgba(230, 184, 0, 0.2); /* Sombra dourada sutil */
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsivo */
+    gap: 25px;
+    padding: 30px 40px;
+}
+
+.produto {
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 16px; /* Bordas arredondadas elegantes, sem virar um círculo */
+    text-align: center;
+    border: 1px solid #F0E6D2; /* Borda bege bem suave */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Efeito de flutuar ao passar o mouse no card do produto */
+.produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(204, 153, 0, 0.15);
+}
+
+button {
+    background-color: #DAA520; /* Dourado Ouro */
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+/* CORREÇÃO: Sintaxe correta do Hover */
+button:hover {
+    background-color: #B8860B; /* Dourado mais escuro */
+}
+
+button:active {
+    transform: scale(0.97); /* Feedback de clique */
+}
+
+.carrinho {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: #F9F3DC; /* Bege aconchegante para o carrinho */
+    padding: 25px;
+    transition: 0.3s ease-in-out;
+    box-shadow: -5px 0 15px rgba(74, 62, 37, 0.1);
+    border-left: 2px solid #E6B800; /* Linha dourada na borda do carrinho */
+}
+
+.fotos {
+    width: 100%;
+    max-width: 220px;
+    height: 220px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.filtrarItens {
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: 1px solid #DAA520;
+    background: white;
+    color: #A37A00;
+    transition: 0.3s;
+}
+
+.filtrarItens:hover {
+    background: #DAA520;
+    color: white;
+}
+
+.total {
+    font-size: 22px;
+    font-weight: bold;
+    color: #997300; /* Dourado em destaque para o preço */
+    margin-top: 20px;
+}
+
+/* TEMA ESCURO (Otimizado para o contraste com Dourado) */
+
+.dark {
+    background: #181612; /* Fundo escuro levemente aquecido */
+    color: #F5F0E6;
+}
+
+.dark .produto {
+    background: #23201A;
+    border-color: #383329;
+}
+
+.dark .carrinho {
+    background: #1F1C16;
+    border-left-color: #DAA520;
+}
+
+.dark input {
+    background: #2D2820;
+    color: white;
+    border: 1px solid #473F33;
+}
+
+.dark .filtrarItens {
+    background: #23201A;
+    color: #F4E4A1;
+    border-color: #997300;
+}
+
+.dark .filtrarItens:hover {
+    background: #DAA520;
+    color: #181612;
+}
+
+
+/* Área da pesquisa */
+.filtros-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    gap: 15px;
+}
+
+/* Campo de pesquisa */
+#pesquisa{
+    width: 420px;
+    max-width: 90%;
+    padding: 12px 18px;
+    border: 2px solid #d9c24b;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Container dos botões */
+.filtro-itens{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Botões */
+.filtrarItens{
+    background: #d9c24b;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 22px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Efeito ao passar o mouse */
+.filtrarItens:hover{
+    background: #b89d1d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,.15);
+}
+
+
+/* Atualiza a fonte do site inteiro para uma mais limpa e moderna */
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    background-color: #FDFBF7;
+    color: #4A3E25;
+}
+
+/* Deixa o nome "Meu cacho" super elegante, feminino e empoderado */
+header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: italic; /* O itálico dá um charme super feminino e fluido, lembrando curvas e cachos */
+    color: #FFFFFF;
+    margin: 0;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.15); /* Sombra leve para destacar no fundo dourado */
+}
+
+/* Garante que os subtítulos das seções também fiquem lindos */
+h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: #8A6D22; /* Um tom bronze/dourado mais escuro para os títulos */
+    padding-left: 40px;
+    margin-top: 40px;
+}
+
+/* Container que junta a logo e o texto */
+.logo-container {
+    display: flex;
+    align-items: center; /* Alinha verticalmente ao centro */
+    gap: 10px;          /* Espaçamento entre a imagem e o texto */
+}
+
+/* Controlar o tamanho da logo para não quebrar o layout */
+.logo-img {
+    height: 40px;       /* Ajuste a altura de acordo com o seu menu */
+    width: auto;        /* Mantém a proporção da imagem */
+    object-fit: contain;
+}
+
+/* Estilização do texto (se necessário ajustar) */
+.logo-texto {
+    font-size: 24px;    /* Tamanho da fonte original do seu site */
+    font-weight: bold;
+    color: #ffffff;     /* Cor atual do seu texto */
+}
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Loja Virtual</title>
+
+    <!-- Links do Google Fonts (Fontes: Playfair Display e Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1> Curl Power</h1>
+      
+
+        <div class="topo-botoes">
+            <button onclick="modoEscuro()">🌙 Tema Escuro</button>
+            <button onclick="abrirCarrinho()">Carrinho (<span id="contador">0</span>)</button>
+        </div>
+    </header>
+
+    <div class="filtros-container">
+
+    <input
+        type="text"
+        id="pesquisa"
+        placeholder="Pesquisar produto..."
+    >
+
+    <div class="filtro-itens">
+        <button onclick="ordenarAZ()" class="filtrarItens">
+            Selecionar de A-Z
+        </button>
+
+        <button onclick="ordenarMenor()" class="filtrarItens">
+            Selecionar do menor preço
+        </button>
+
+        <button onclick="ordenarMaior()" class="filtrarItens">
+            Selecionar por maior preço
+        </button>
+    </div>
+
+</div>
+
+    <h2>Principais Produtos</h2>
+    <main id="principais" class="produtos"></main>
+
+    <h2>Novidades</h2>
+    <main id="novidades" class="produtos"></main>
+
+    <h2>Mais Vendidos</h2>
+    <main id="maisVendidos" class="produtos"></main>
+
+    <div id="carrinho" class="carrinho">
+        <i class="fa-solid fa-cart-arrow-down"></i>
+
+        <div class="lista-scroll">
+            <ul id="listaCarrinho"></ul>
+        </div>
+
+        <p class="total">
+            Total: R$ <span id="total">0.00</span>
+        </p>
+
+        <div class="formas-pagamento">
+            <label for="formaPagamento">Forma de Pagamento:</label>
+            <select id="formaPagamento" onchange="verificarFormaPagamento()">
+                <option value="vista">À Vista</option>
+                <option value="prazo">A Prazo</option>
+            </select>
+
+            <div id="campoDesconto" style="display: none;">
+                <label for="porcentagemDesconto">Desconto (%):</label>
+                <input type="number" id="porcentagemDesconto" min="0" max="100" onchange="calcularTotal()">
+            </div>
+        </div>
+
+        <p class="total">
+            Valor Final: R$ <span id="valorFinalExibido">0.00</span>
+        </p>
+
+        <button onclick="finalizarCompra()">Finalizar Compra</button>
+        <button onclick="fecharCarrinho()">Fechar</button>     
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
