@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --emerald-darkest: #07140e;
+    --emerald-dark: #091c13;
+    --emerald-mid: #0f2d1f;
+    --emerald-rich: #163e2b;
+    --gold-vibrant: #f3e5ab;
+    --gold-mid: #e5c158;
+    --gold-deep: #d4af37;
+    --gold-dark: #b8860b;
+    --cream: rgba(250, 248, 242, 0.96);
+    --text-dark: #091c13;
+    --text-muted: #3a5345;
+}
+
+body {
+    background: var(--emerald-darkest);
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Tema escuro (classes comuns que o script pode aplicar) */
+body.dark {
+    --emerald-rich: #0a1a12;
+    --emerald-dark: #040a07;
+    --emerald-darkest: #020504;
+    background: #020504;
+}
+body.dark .bg-animation::before { background: radial-gradient(circle, rgba(229,193,88,.07) 0%, transparent 55%); }
+body.dark .produto, body.dark .carrinho { filter: brightness(.92); }
+
+/* ---------- Fundo animado ---------- */
+.bg-animation {
+    position: fixed; inset: 0; z-index: -1; overflow: hidden;
+    background: radial-gradient(circle at 50% 30%, var(--emerald-rich) 0%, var(--emerald-dark) 60%, var(--emerald-darkest) 100%);
+}
+.bg-animation::before {
+    content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(229,193,88,.15) 0%, transparent 55%);
+    animation: rotateGradient 22s linear infinite;
+}
+@keyframes rotateGradient { to { transform: rotate(360deg); } }
+.particle {
+    position: absolute; border-radius: 50%; pointer-events: none; opacity: .6;
+    background: radial-gradient(circle, var(--gold-vibrant) 0%, rgba(229,193,88,0) 75%);
+    animation: floatParticle 10s ease-in-out infinite;
+}
+@keyframes floatParticle {
+    0%,100% { transform: translateY(0) scale(1); opacity: .3; }
+    50% { transform: translateY(-90px) scale(1.4); opacity: .9; }
+}
+
+/* ---------- Header ---------- */
+header {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;
+    padding: 18px 6%;
+    background: rgba(7,20,14,.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(229,193,88,.35);
+}
+header::after {
+    content: ''; position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%);
+    width: 160px; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-mid), var(--gold-vibrant), var(--gold-mid), transparent);
+    box-shadow: 0 2px 10px rgba(229,193,88,.6);
+}
+header h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 28px; letter-spacing: 4px; font-weight: 700;
+    background: linear-gradient(135deg, var(--gold-vibrant), var(--gold-mid) 50%, var(--gold-dark));
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+header h1 a { text-decoration: none; color: inherit; -webkit-text-fill-color: transparent; }
+.topo-botoes { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ---------- Botões ---------- */
+button {
+    padding: 12px 22px;
+    font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: #07140e; border: none; border-radius: 12px; cursor: pointer;
+    background: linear-gradient(135deg, var(--gold-vibrant) 0%, var(--gold-mid) 50%, var(--gold-dark) 100%);
+    box-shadow: 0 6px 20px rgba(184,134,11,.3);
+    transition: all .3s ease;
+}
+button:hover {
+    background: linear-gradient(135deg, #fff 0%, var(--gold-vibrant) 40%, var(--gold-deep) 100%);
+    box-shadow: 0 8px 25px rgba(212,175,55,.5);
+    transform: translateY(-2px);
+}
+button:active { transform: translateY(0); }
+button:focus-visible, input:focus-visible, select:focus-visible {
+    outline: 3px solid rgba(251,238,162,.7); outline-offset: 2px;
+}
+
+/* ---------- Filtros ---------- */
+.filtros-container {
+    max-width: 1200px; margin: 36px auto 10px; padding: 0 6%;
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between;
+}
+#pesquisa {
+    flex: 1 1 280px; padding: 14px 18px;
+    border: 1.5px solid rgba(229,193,88,.5); border-radius: 12px;
+    background: var(--cream); color: var(--text-dark);
+    font-family: 'Poppins', sans-serif; font-size: 14px;
+    transition: all .3s ease;
+}
+#pesquisa::placeholder { color: #8a948d; font-weight: 300; }
+#pesquisa:focus { outline: none; border-color: var(--gold-deep); box-shadow: 0 0 0 4px rgba(212,175,55,.25); }
+.filtro-itens { display: flex; flex-wrap: wrap; gap: 10px; }
+.filtrarItens {
+    background: transparent; color: var(--gold-vibrant);
+    border: 1.5px solid var(--gold-mid); box-shadow: none; padding: 10px 16px;
+}
+.filtrarItens:hover { background: rgba(229,193,88,.15); color: #fff; box-shadow: none; }
+
+/* ---------- Títulos de seção ---------- */
+h2 {
+    max-width: 1200px; margin: 50px auto 22px; padding: 0 6%;
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600;
+    font-size: 34px; letter-spacing: 2px; color: var(--gold-mid);
+    display: flex; align-items: center; gap: 16px;
+}
+h2::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, var(--gold-mid), transparent);
+}
+
+/* ---------- Produtos (.produto criado pelo script.js) ---------- */
+.produtos {
+    max-width: 1200px; margin: 0 auto; padding: 0 6%;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 24px;
+}
+.produto {
+    position: relative;
+    background: var(--cream); color: var(--text-dark);
+    padding: 22px 20px 24px; border-radius: 20px; text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,.45), 0 0 0 1px rgba(229,193,88,.5), inset 0 0 15px rgba(212,175,55,.1);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+.produto::before {
+    content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 90px; height: 4px; border-radius: 0 0 6px 6px;
+    background: linear-gradient(90deg, transparent, var(--gold-mid), var(--gold-vibrant), var(--gold-mid), transparent);
+}
+.produto:hover { transform: translateY(-6px); box-shadow: 0 26px 50px rgba(0,0,0,.55), 0 0 0 1px var(--gold-deep); }
+.fotos {
+    display: block; width: 100%; height: 200px; margin-bottom: 14px;
+    object-fit: contain; background: #fff; border-radius: 12px;
+}
+.produto h3 {
+    font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; line-height: 1.25;
+    color: var(--emerald-dark); min-height: 3.75em; margin-bottom: 8px;
+}
+.produto p { font-size: 18px; font-weight: 700; color: var(--gold-dark); margin-bottom: 16px; }
+.produto button { width: 100%; }
+
+/* ---------- Carrinho (script.js move com style.right) ---------- */
+.carrinho {
+    position: fixed; top: 0; right: -300px; z-index: 100;
+    width: 300px; max-width: 100%; height: 100vh;
+    padding: 26px 20px; overflow-y: auto;
+    background: var(--cream); color: var(--text-dark);
+    box-shadow: -20px 0 50px rgba(0,0,0,.6), -1px 0 0 rgba(229,193,88,.6);
+    display: flex; flex-direction: column; gap: 14px;
+    transition: right .4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.carrinho::before {
+    content: 'Seu Carrinho';
+    font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; font-style: italic;
+    color: var(--emerald-dark); padding-bottom: 10px;
+    border-bottom: 1.5px solid var(--gold-mid);
+}
+.lista-scroll { flex: 1; min-height: 120px; overflow-y: auto; }
+#listaCarrinho { list-style: none; }
+#listaCarrinho li { padding: 10px 0; font-size: 13px; line-height: 1.6; color: var(--text-muted); }
+#listaCarrinho li strong { color: var(--emerald-dark); font-weight: 600; }
+#listaCarrinho li input {
+    width: 56px; padding: 5px 8px; border: 1.5px solid #dcd6c8; border-radius: 8px;
+    font-family: 'Poppins', sans-serif; font-size: 13px; background: #fff;
+}
+#listaCarrinho li input:focus { outline: none; border-color: var(--gold-deep); }
+#listaCarrinho li button { padding: 6px 12px; font-size: 10px; }
+#listaCarrinho li hr { border: none; height: 1px; margin-top: 12px; background: linear-gradient(90deg, var(--gold-mid), transparent); }
+.total { font-size: 15px; font-weight: 600; color: var(--emerald-dark); }
+.total span { color: var(--gold-dark); font-weight: 700; }
+.formas-pagamento { display: flex; flex-direction: column; gap: 8px; }
+.formas-pagamento label {
+    font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--emerald-dark);
+}
+.formas-pagamento select, .formas-pagamento input {
+    width: 100%; padding: 12px 14px; border: 1.5px solid #dcd6c8; border-radius: 12px;
+    background: #fff; color: var(--emerald-darkest); font-family: 'Poppins', sans-serif; font-size: 14px;
+}
+.formas-pagamento select:focus, .formas-pagamento input:focus {
+    outline: none; border-color: var(--gold-deep); box-shadow: 0 0 0 4px rgba(212,175,55,.2);
+}
+.carrinho > button { width: 100%; }
+.carrinho > button:last-of-type {
+    background: transparent; color: var(--emerald-dark); border: 1.5px solid var(--emerald-dark); box-shadow: none;
+}
+.carrinho > button:last-of-type:hover { background: var(--emerald-dark); color: var(--gold-vibrant); }
+
+@media (max-width: 640px) {
+    header { justify-content: center; }
+    h2 { font-size: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+}
