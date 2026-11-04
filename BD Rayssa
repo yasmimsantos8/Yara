@@ -1,0 +1,137 @@
+-- =====================================================
+-- Banco de dados: Loja Yara | Perfumes Árabes (MySQL 8+)
+-- =====================================================
+
+DROP DATABASE IF EXISTS loja_yara;
+CREATE DATABASE loja_yara CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE loja_yara;
+
+-- -----------------------------------------------------
+-- USUÁRIOS (tela de cadastro)
+-- A senha NUNCA é guardada em texto puro: salve o hash
+-- gerado pelo backend (ex.: bcrypt) em senha_hash.
+-- -----------------------------------------------------
+CREATE TABLE usuarios (
+    id            INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nome          VARCHAR(120) NOT NULL,
+    email         VARCHAR(150) NOT NULL UNIQUE,
+    telefone      VARCHAR(15)  NOT NULL,          -- formato (00) 00000-0000
+    senha_hash    VARCHAR(255) NOT NULL,
+    criado_em     TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+-- -----------------------------------------------------
+-- CATEGORIAS (menu: Masculinos, Femininos...)
+-- -----------------------------------------------------
+CREATE TABLE categorias (
+    id    INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nome  VARCHAR(60) NOT NULL UNIQUE
+) ENGINE=InnoDB;
+
+-- -----------------------------------------------------
+-- PRODUTOS (lista "produtos" do script.js)
+-- secao = onde aparece na loja:
+--   principais | novidades | maisVendidos
+-- -----------------------------------------------------
+CREATE TABLE produtos (
+    id            INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nome          VARCHAR(200) NOT NULL,
+    preco         DECIMAL(10,2) NOT NULL CHECK (preco >= 0),
+    imagem        VARCHAR(500),
+    secao         ENUM('principais','novidades','maisVendidos') NOT NULL,
+    categoria_id  INT UNSIGNED NULL,
+    ativo         TINYINT(1) NOT NULL DEFAULT 1,
+    criado_em     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (categoria_id) REFERENCES categorias(id) ON DELETE SET NULL,
+    INDEX idx_secao (secao),
+    INDEX idx_nome (nome)
+) ENGINE=InnoDB;
+
+-- -----------------------------------------------------
+-- CARRINHO (hoje fica no localStorage; aqui para
+-- quando o usuário estiver logado)
+-- -----------------------------------------------------
+CREATE TABLE carrinho_itens (
+    id          INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    usuario_id  INT UNSIGNED NOT NULL,
+    produto_id  INT UNSIGNED NOT NULL,
+    quantidade  INT UNSIGNED NOT NULL DEFAULT 1 CHECK (quantidade > 0),
+    UNIQUE KEY uq_usuario_produto (usuario_id, produto_id),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE,
+    FOREIGN KEY (produto_id) REFERENCES produtos(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+-- -----------------------------------------------------
+-- PEDIDOS (botão "Finalizar Compra")
+-- forma_pagamento: À Vista ou A Prazo (com desconto %)
+-- -----------------------------------------------------
+CREATE TABLE pedidos (
+    id               INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    usuario_id       INT UNSIGNED NOT NULL,
+    forma_pagamento  ENUM('vista','prazo') NOT NULL DEFAULT 'vista',
+    desconto_pct     DECIMAL(5,2) NOT NULL DEFAULT 0 CHECK (desconto_pct BETWEEN 0 AND 100),
+    total            DECIMAL(10,2) NOT NULL,       -- soma dos itens
+    valor_final      DECIMAL(10,2) NOT NULL,       -- total com desconto
+    status           ENUM('pendente','pago','enviado','entregue','cancelado') NOT NULL DEFAULT 'pendente',
+    criado_em        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
+    INDEX idx_usuario (usuario_id)
+) ENGINE=InnoDB;
+
+-- preco_unitario e nome ficam gravados no pedido para o
+-- histórico não mudar se o produto for alterado depois.
+CREATE TABLE pedido_itens (
+    id              INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    pedido_id       INT UNSIGNED NOT NULL,
+    produto_id      INT UNSIGNED NULL,
+    nome_produto    VARCHAR(200) NOT NULL,
+    preco_unitario  DECIMAL(10,2) NOT NULL,
+    quantidade      INT UNSIGNED NOT NULL CHECK (quantidade > 0),
+    FOREIGN KEY (pedido_id) REFERENCES pedidos(id) ON DELETE CASCADE,
+    FOREIGN KEY (produto_id) REFERENCES produtos(id) ON DELETE SET NULL
+) ENGINE=InnoDB;
+
+-- =====================================================
+-- DADOS INICIAIS
+-- =====================================================
+INSERT INTO categorias (nome) VALUES ('Masculinos'), ('Femininos'), ('Kits');
+
+INSERT INTO produtos (nome, preco, imagem, secao, categoria_id) VALUES
+('Sahari Sultana Halima EDP 100ml', 239.90,
+ 'https://down-br.img.susercontent.com/file/br-11134207-81z1k-mhdi0ye3l4ate4', 'principais', 2),
+('kit perfumação com 5 Body Splash Xerosa', 150.30,
+ 'https://www.salonline.com.br/ccstore/v1/images/?source=/file/v8372869211055809370/products/33653.jpg&height=940&width=940', 'principais', 3),
+('Kit Completo SOS Cachos De Repente Pronta', 160.20,
+ 'https://www.salonline.com.br/ccstore/v1/images/?source=/file/v5155328260216366914/products/32720.jpg&height=940&width=940', 'principais', 3),
+('Kit Tratamento e Finalização Cachos Ostentação', 148.95,
+ 'https://www.salonline.com.br/ccstore/v1/images/?source=/file/v883330640618203797/products/33691.jpg&height=940&width=940', 'novidades', 3),
+('Kit 2 Cremes para Pentear Cachos de Sereia e Cachos à Prova', 75.60,
+ 'https://www.salonline.com.br/ccstore/v1/images/?source=/file/v5125349893167266216/products/33678.jpg&height=940&width=940', 'novidades', 3),
+('Duplinha de Kits Xêrosa Body Splash e Creme para Pentear', 160.20,
+ 'https://www.salonline.com.br/ccstore/v1/images/?source=/file/v1187472468471536226/products/33706.jpg&height=940&width=940', 'novidades', 3),
+('Kit Definição Natural com Mousse e Creme para Pentear', 64.35,
+ 'https://www.salonline.com.br/ccstore/v1/images/?source=/file/v5155328260216366914/products/32720.jpg&height=940&width=940', 'maisVendidos', 3),
+('Kit Completo de Definição Natural + De Repente Pronta', 191.70,
+ 'https://www.salonline.com.br/ccstore/v1/images/?source=/file/v6244206327497156262/products/33408_.jpg&height=940&width=940', 'maisVendidos', 3),
+('Kit Definição Natural com Mousse, Óleo Booster, Máscara e Óleo de Tratamento', 106.20,
+ 'https://www.salonline.com.br/ccstore/v1/images/?source=/file/v7013296204912457392/products/33728.png&height=940&width=940', 'maisVendidos', 3);
+
+-- =====================================================
+-- CONSULTAS ÚTEIS
+-- =====================================================
+
+-- Produtos de uma seção da loja, do menor para o maior preço
+-- SELECT * FROM produtos WHERE secao = 'novidades' AND ativo = 1 ORDER BY preco ASC;
+
+-- Pesquisa por nome (campo "Pesquisar produto...")
+-- SELECT * FROM produtos WHERE nome LIKE '%kit%' AND ativo = 1;
+
+-- Carrinho de um usuário com subtotal
+-- SELECT p.nome, p.preco, c.quantidade, p.preco * c.quantidade AS subtotal
+-- FROM carrinho_itens c JOIN produtos p ON p.id = c.produto_id
+-- WHERE c.usuario_id = 1;
+
+-- Itens de um pedido
+-- SELECT nome_produto, preco_unitario, quantidade,
+--        preco_unitario * quantidade AS subtotal
+-- FROM pedido_itens WHERE pedido_id = 1;
