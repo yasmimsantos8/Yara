@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yara | Perfumes Árabes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Fundo animado esmeralda & ouro -->
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <header>
+        <div class="logo">YARA</div>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="loja.html">Perfumes</a>
+            <a href="#">Masculinos</a>
+            <a href="#">Femininos</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <main class="capa">
+
+        <div class="texto">
+            <p class="subtitulo">Perfumes Árabes</p>
+
+            <h1>
+                YARA<br>
+                <span>ESSENCE</span>
+            </h1>
+
+            <p class="descricao">
+                Descubra fragrâncias marcantes, sofisticadas
+                e envolventes inspiradas na perfumaria árabe.
+            </p>
+
+            <a href="loja.html">
+                <button type="button">Explorar Perfumes</button>
+            </a>
+        </div>
+
+        <div class="perfume">
+            <div class="brilho"></div>
+            <img src="img/perfume.png" alt="Perfume árabe">
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Yara — Perfumaria Árabe</p>
+    </footer>
+
+    <script>
+        // Partículas douradas flutuantes (mesmo efeito do cadastro)
+        window.addEventListener('DOMContentLoaded', () => {
+            const bg = document.getElementById('bgAnimation');
+            for (let i = 0; i < 24; i++) {
+                const p = document.createElement('div');
+                p.classList.add('particle');
+                const size = Math.random() * 6 + 2;
+                p.style.width = `${size}px`;
+                p.style.height = `${size}px`;
+                p.style.left = `${Math.random() * 100}%`;
+                p.style.top = `${Math.random() * 100}%`;
+                p.style.animationDuration = `${Math.random() * 8 + 7}s`;
+                p.style.animationDelay = `${Math.random() * 5}s`;
+                bg.appendChild(p);
+            }
+        });
+    </script>
+</body>
+</html>
