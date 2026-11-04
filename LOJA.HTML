@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Yara | Perfumes Árabes</title>
+    <link rel="stylesheet" href="loja.css">
+</head>
+<body>
+
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <header>
+        <h1><a href="index.html">YARA</a></h1>
+
+        <div class="topo-botoes">
+            <button onclick="modoEscuro()">🌙 Tema Escuro</button>
+            <button onclick="abrirCarrinho()">Carrinho (<span id="contador">0</span>)</button>
+        </div>
+    </header>
+
+    <div class="filtros-container">
+        <input type="text" id="pesquisa" placeholder="Pesquisar produto...">
+
+        <div class="filtro-itens">
+            <button onclick="ordenarAZ()" class="filtrarItens">Ordenar de A-Z</button>
+            <button onclick="ordenarMenor()" class="filtrarItens">Menor preço</button>
+            <button onclick="ordenarMaior()" class="filtrarItens">Maior preço</button>
+        </div>
+    </div>
+
+    <h2>Principais Produtos</h2>
+    <main id="principais" class="produtos"></main>
+
+    <h2>Novidades</h2>
+    <main id="novidades" class="produtos"></main>
+
+    <h2>Mais Vendidos</h2>
+    <main id="maisVendidos" class="produtos"></main>
+
+    <div id="carrinho" class="carrinho">
+        <div class="lista-scroll">
+            <ul id="listaCarrinho"></ul>
+        </div>
+
+        <p class="total">Total: R$ <span id="total">0.00</span></p>
+
+        <div class="formas-pagamento">
+            <label for="formaPagamento">Forma de Pagamento</label>
+            <select id="formaPagamento" onchange="verificarFormaPagamento()">
+                <option value="vista">À Vista</option>
+                <option value="prazo">A Prazo</option>
+            </select>
+
+            <div id="campoDesconto" style="display: none;">
+                <label for="porcentagemDesconto">Desconto (%)</label>
+                <input type="number" id="porcentagemDesconto" min="0" max="100" onchange="calcularTotal()">
+            </div>
+        </div>
+
+        <p class="total">Valor Final: R$ <span id="valorFinalExibido">0.00</span></p>
+
+        <button onclick="finalizarCompra()">Finalizar Compra</button>
+        <button onclick="fecharCarrinho()">Fechar</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Partículas douradas (mesmo efeito do cadastro)
+        window.addEventListener('DOMContentLoaded', () => {
+            const bg = document.getElementById('bgAnimation');
+            for (let i = 0; i < 24; i++) {
+                const p = document.createElement('div');
+                p.classList.add('particle');
+                const s = Math.random() * 6 + 2;
+                p.style.width = p.style.height = `${s}px`;
+                p.style.left = `${Math.random() * 100}%`;
+                p.style.top = `${Math.random() * 100}%`;
+                p.style.animationDuration = `${Math.random() * 8 + 7}s`;
+                p.style.animationDelay = `${Math.random() * 5}s`;
+                bg.appendChild(p);
+            }
+        });
+    </script>
+</body>
+</html>
