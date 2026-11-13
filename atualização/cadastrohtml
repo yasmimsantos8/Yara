@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Exclusivo - Loja Yara | Perfumes Árabes de Luxo</title>
+    <!-- Google Fonts: Cinzel Decorative, Cormorant Garamond, and Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Palette Core: Deep Emeralds & Vibrant Golds */
+            --emerald-darkest: #07140e;
+            --emerald-dark: #091c13;
+            --emerald-mid: #0f2d1f;
+            --emerald-rich: #163e2b;
+            --emerald-light: #1e5038;
+            
+            --gold-light: #fbeea2;
+            --gold-vibrant: #f3e5ab;
+            --gold-mid: #e5c158;
+            --gold-deep: #d4af37;
+            --gold-dark: #b8860b;
+            
+            --cream-bg: rgba(250, 248, 242, 0.96);
+            --text-dark: #091c13;
+            --text-muted: #3a5345;
+        }
+
+        body {
+            background-color: var(--emerald-darkest);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px 16px;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+            color: var(--text-dark);
+        }
+
+        /* Fundo Animado e Vibrante de Alta Classe */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 50% 30%, var(--emerald-rich) 0%, var(--emerald-dark) 60%, var(--emerald-darkest) 100%);
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(229, 193, 88, 0.15) 0%, transparent 55%);
+            animation: rotateGradient 22s linear infinite;
+        }
+
+        @keyframes rotateGradient {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Partículas Douradas Flutuantes */
+        .particle {
+            position: absolute;
+            background: radial-gradient(circle, var(--gold-vibrant) 0%, rgba(229, 193, 88, 0) 75%);
+            border-radius: 50%;
+            animation: floatParticle 10s ease-in-out infinite;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        @keyframes floatParticle {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateY(-90px) scale(1.4);
+                opacity: 0.9;
+            }
+        }
+
+        /* Container Principal do Formulário */
+        .container {
+            background: var(--cream-bg);
+            width: 100%;
+            max-width: 520px;
+            padding: 50px 42px;
+            border-radius: 24px;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.6), 
+                0 0 0 1px rgba(229, 193, 88, 0.5),
+                inset 0 0 15px rgba(212, 175, 55, 0.1);
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(12px);
+            animation: fadeInCard 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeInCard {
+            from {
+                opacity: 0;
+                transform: translateY(25px) scale(0.97);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Detalhe Superior de Arabesco e Dourado */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 160px;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, var(--gold-mid), var(--gold-vibrant), var(--gold-mid), transparent);
+            border-radius: 0 0 6px 6px;
+            box-shadow: 0 2px 10px rgba(229, 193, 88, 0.6);
+        }
+
+        /* Área do Logo & Tipografia Exclusiva Yara */
+        .logo-area {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .logo-emblem {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 12px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .logo-emblem svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 3px 6px rgba(184, 134, 11, 0.3));
+        }
+
+        /* Nome 'Yara' em Destaque Ultra-Chic */
+        .brand-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #163e2b 0%, #091c13 40%, #8a6d1c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2px;
+            line-height: 1.1;
+        }
+
+        .brand-subtitle-main {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 600;
+            font-style: italic;
+            letter-spacing: 2px;
+            color: var(--gold-dark);
+            margin-bottom: 6px;
+            text-transform: capitalize;
+        }
+
+        .brand-tagline {
+            color: var(--text-muted);
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* Separador Dourado Decorativo */
+        .divider-gold {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 18px 0 25px 0;
+        }
+
+        .divider-gold::before,
+        .divider-gold::after {
+            content: '';
+            height: 1px;
+            width: 60px;
+            background: linear-gradient(90deg, transparent, var(--gold-mid), transparent);
+        }
+
+        .divider-diamond {
+            width: 6px;
+            height: 6px;
+            background-color: var(--gold-deep);
+            transform: rotate(45deg);
+        }
+
+        /* Formulário & Entradas */
+        .form-group {
+            margin-bottom: 22px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--emerald-dark);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px 18px;
+            border: 1.5px solid #dcd6c8;
+            border-radius: 12px;
+            font-size: 14px;
+            background-color: #ffffff;
+            color: var(--emerald-darkest);
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .form-group input::placeholder {
+            color: #a0a7a2;
+            font-weight: 300;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--gold-deep);
+            background-color: #ffffff;
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Botão Dourado Metálico Vibrante */
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--gold-vibrant) 0%, var(--gold-mid) 50%, var(--gold-dark) 100%);
+            color: #07140e;
+            border: none;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            margin-top: 10px;
+            box-shadow: 0 6px 20px rgba(184, 134, 11, 0.35);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-submit::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transform: rotate(30deg) translateX(-100%);
+            transition: transform 0.8s ease;
+        }
+
+        .btn-submit:hover::after {
+            transform: rotate(30deg) translateX(100%);
+        }
+
+        .btn-submit:hover {
+            background: linear-gradient(135deg, #ffffff 0%, var(--gold-vibrant) 40%, var(--gold-deep) 100%);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        /* Rodapé e Links */
+        .footer-link {
+            text-align: center;
+            margin-top: 28px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer-link a {
+            color: var(--emerald-dark);
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom: 1.5px solid var(--gold-mid);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link a:hover {
+            color: var(--gold-dark);
+            border-color: var(--emerald-rich);
+        }
+
+        /* Mensagens de Alerta e Sucesso Personalizadas */
+        .alert-message {
+            display: none;
+            padding: 14px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 13px;
+            margin-top: 18px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .alert-error {
+            background-color: #fdf2f2;
+            color: #9b1c1c;
+            border: 1px solid #fbd5d5;
+        }
+
+        .success-card {
+            display: none;
+            background: linear-gradient(135deg, var(--emerald-dark) 0%, var(--emerald-mid) 100%);
+            color: var(--gold-vibrant);
+            padding: 24px;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 20px;
+            border: 1px solid var(--gold-mid);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .success-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .success-card p {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #dcd6c8;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fundo Animado Esmeralda & Ouro -->
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <div class="container">
+        <!-- Logo e Tipografia Exclusiva -->
+        <div class="logo-area">
+            <div class="logo-emblem">
+                <!-- Emblema / Monograma Ornamental SVG em Ouro -->
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="4 2"/>
+                    <circle cx="50" cy="50" r="40" stroke="url(#goldGrad)" stroke-width="1"/>
+                    <path d="M50 15 L53 25 L63 22 L57 30 L67 35 L58 40 L65 50 L55 48 L50 60 L45 48 L35 50 L42 40 L33 35 L43 30 L37 22 L47 25 Z" fill="url(#goldGrad)" opacity="0.85"/>
+                    <path d="M50 25 C35 25 25 38 25 55 C25 72 38 82 50 82 C62 82 75 72 75 55 C75 38 65 25 50 25 Z" stroke="url(#goldGrad)" stroke-width="1.5"/>
+                    <path d="M50 32 L50 75 M38 52 C38 52 44 48 50 52 C56 56 62 52 62 52" stroke="url(#goldGrad)" stroke-width="1.2" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#F3E5AB" />
+                            <stop offset="50%" stop-color="#E5C158" />
+                            <stop offset="100%" stop-color="#B8860B" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            
+            <h1 class="brand-title">YARA</h1>
+            <div class="brand-subtitle-main">Perfumes Árabes</div>
+            <p class="brand-tagline">Alta Perfumaria Árabe & Essências Raras</p>
+
+            <div class="divider-gold">
+                <span class="divider-diamond"></span>
+            </div>
+        </div>
+
+        <!-- Formulário de Cadastro Exclusivo -->
+        <form id="cadastroForm" onsubmit="handleCadastro(event)">
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail de Membro</label>
+                <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefone">Telefone / WhatsApp</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" maxlength="15" required>
+            </div>
+
+            <div class="form-group">
+                <label for="senha">Senha de Acesso</label>
+                <input type="password" id="senha" name="senha" placeholder="Mínimo de 6 caracteres" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Criar Conta Exclusiva</button>
+        </form>
+
+        <!-- Mensagem de Erro (Validação) -->
+        <div id="msgErro" class="alert-message alert-error"></div>
+
+        <!-- Card de Sucesso -->
+        <div id="msgSucesso" class="success-card">
+            <h3>⚜️ Bem-vindo(a) à Loja Yara</h3>
+            <p>Seu cadastro VIP foi realizado com sucesso. Prepare-se para vivenciar uma experiência sensorial inesquecível em perfumaria de alto luxo.</p>
+        </div>
+
+        <div class="footer-link">
+            Já possui uma conta de membro? <a href="#">Acesse seu perfil</a>
+        </div>
+    </div>
+
+    <script>
+        // Gerar Partículas Douradas Flutuantes no Fundo
+        window.addEventListener('DOMContentLoaded', () => {
+            const bg = document.getElementById('bgAnimation');
+            const particleCount = 24;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                const size = Math.random() * 6 + 2; // Tamanho entre 2px e 8px
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                particle.style.animationDuration = `${Math.random() * 8 + 7}s`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+
+                bg.appendChild(particle);
+            }
+        });
+
+        // Máscara Automática de Telefone / WhatsApp
+        document.getElementById('telefone').addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 11) value = value.slice(0, 11);
+            
+            if (value.length > 6) {
+                value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+            } else if (value.length > 2) {
+                value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+            } else if (value.length > 0) {
+                value = `(${value}`;
+            }
+            e.target.value = value;
+        });
+
+        // Lógica de Validação e Submissão do Cadastro
+        function handleCadastro(event) {
+            event.preventDefault();
+            
+            const senhaInput = document.getElementById('senha').value;
+            const msgErro = document.getElementById('msgErro');
+            const form = document.getElementById('cadastroForm');
+            const msgSucesso = document.getElementById('msgSucesso');
+
+            // Resetar mensagens
+            msgErro.style.display = 'none';
+            msgErro.textContent = '';
+
+            // Validação de Tamanho da Senha
+            if (senhaInput.length < 6) {
+                msgErro.textContent = 'A senha deve conter no mínimo 6 caracteres para sua segurança.';
+                msgErro.style.display = 'block';
+                return;
+            }
+
+            // Animação de envio e resposta de sucesso
+            form.style.opacity = '0.2';
+            form.style.pointerEvents = 'none';
+            msgSucesso.style.display = 'block';
+
+            console.log("Cadastro exclusivo submetido com sucesso para a Loja Yara.");
+        }
+    </script>
+</body>
+</html>
