@@ -515,6 +515,15 @@
 
             console.log("Cadastro exclusivo submetido com sucesso para a Loja Yara.");
         }
-    </script>
+        </script>
+    <script src="cadastro.js"></script>
+            <div class="footer-link">
+            Já possui uma conta de membro? <a href="#">Acesse seu perfil</a>
+        </div>
+    </div>
+
+    <script src="cadastro.js"></script>
+</body>
+</html>
 </body>
 </html>
