@@ -215,3 +215,16 @@ h2::after {
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+
+.imagem-circular {
+  width: 350px;          /* Largura e altura devem ser exatamente iguais */
+  height: 350px;
+  border-radius: 50%;    /* Deixa perfeitamente redondo */
+  object-fit: cover;     /* Corta as sobras laterais sem achatar/esticar o logo */
+  object-position: center; /* Centraliza o logo dentro do círculo */
+  
+  /* Extras opcionais para combinar com o estilo dourado do seu site: */
+  border: 2px solid #d4af37; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
