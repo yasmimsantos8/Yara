@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         * {
             margin: 0;
@@ -23,24 +23,29 @@
             --emerald-mid: #0f2d1f;
             --emerald-rich: #163e2b;
             --emerald-light: #1e5038;
-            
+
             --gold-light: #fbeea2;
             --gold-vibrant: #f3e5ab;
             --gold-mid: #e5c158;
             --gold-deep: #d4af37;
             --gold-dark: #b8860b;
-            
+
             --cream-bg: rgba(250, 248, 242, 0.96);
             --text-dark: #091c13;
             --text-muted: #3a5345;
         }
 
+        html {
+            min-height: 100%;
+        }
+
         body {
             background-color: var(--emerald-darkest);
             min-height: 100vh;
+            min-height: 100dvh;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: center;   /* centro horizontal */
+            align-items: center;       /* centro vertical */
             padding: 24px 16px;
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
@@ -102,10 +107,11 @@
             background: var(--cream-bg);
             width: 100%;
             max-width: 520px;
+            margin: auto;              /* reforça o centramento */
             padding: 50px 42px;
             border-radius: 24px;
-            box-shadow: 
-                0 30px 60px rgba(0, 0, 0, 0.6), 
+            box-shadow:
+                0 30px 60px rgba(0, 0, 0, 0.6),
                 0 0 0 1px rgba(229, 193, 88, 0.5),
                 inset 0 0 15px rgba(212, 175, 55, 0.1);
             position: relative;
@@ -170,6 +176,7 @@
             text-transform: uppercase;
             background: linear-gradient(135deg, #163e2b 0%, #091c13 40%, #8a6d1c 100%);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 2px;
             line-height: 1.1;
@@ -326,6 +333,10 @@
             border-color: var(--emerald-rich);
         }
 
+        .footer-link.voltar {
+            margin-top: 14px;
+        }
+
         /* Mensagens de Alerta e Sucesso Personalizadas */
         .alert-message {
             display: none;
@@ -374,6 +385,41 @@
             from { opacity: 0; transform: translateY(-8px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* Responsivo: celulares */
+        @media (max-width: 520px) {
+            body {
+                padding: 16px 14px;
+            }
+
+            .container {
+                padding: 40px 22px 32px;
+                border-radius: 20px;
+            }
+
+            .brand-title {
+                font-size: 32px;
+            }
+
+            .brand-subtitle-main {
+                font-size: 18px;
+            }
+
+            .brand-tagline {
+                font-size: 10px;
+                letter-spacing: 1.5px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .container {
+                padding: 36px 16px 28px;
+            }
+
+            .brand-title {
+                font-size: 28px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -401,7 +447,7 @@
                     </defs>
                 </svg>
             </div>
-            
+
             <h1 class="brand-title">YARA</h1>
             <div class="brand-subtitle-main">Perfumes Árabes</div>
             <p class="brand-tagline">Alta Perfumaria Árabe & Essências Raras</p>
@@ -445,8 +491,13 @@
             <p>Seu cadastro VIP foi realizado com sucesso. Prepare-se para vivenciar uma experiência sensorial inesquecível em perfumaria de alto luxo.</p>
         </div>
 
+        <!-- Rodapé (um único bloco, dentro do container) -->
         <div class="footer-link">
-            Já possui uma conta de membro? <a href="#">Acesse seu perfil</a>
+            Já possui uma conta de membro? <a href="login.html">Acesse seu perfil</a>
+        </div>
+
+        <div class="footer-link voltar">
+            <a href="index.html">&larr; Voltar à loja</a>
         </div>
     </div>
 
@@ -459,13 +510,13 @@
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
-                
+
                 const size = Math.random() * 6 + 2; // Tamanho entre 2px e 8px
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
                 particle.style.left = `${Math.random() * 100}%`;
                 particle.style.top = `${Math.random() * 100}%`;
-                
+
                 particle.style.animationDuration = `${Math.random() * 8 + 7}s`;
                 particle.style.animationDelay = `${Math.random() * 5}s`;
 
@@ -477,7 +528,7 @@
         document.getElementById('telefone').addEventListener('input', function (e) {
             let value = e.target.value.replace(/\D/g, '');
             if (value.length > 11) value = value.slice(0, 11);
-            
+
             if (value.length > 6) {
                 value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
             } else if (value.length > 2) {
@@ -491,7 +542,7 @@
         // Lógica de Validação e Submissão do Cadastro
         function handleCadastro(event) {
             event.preventDefault();
-            
+
             const senhaInput = document.getElementById('senha').value;
             const msgErro = document.getElementById('msgErro');
             const form = document.getElementById('cadastroForm');
@@ -515,15 +566,9 @@
 
             console.log("Cadastro exclusivo submetido com sucesso para a Loja Yara.");
         }
-        </script>
-    <script src="cadastro.js"></script>
-            <div class="footer-link">
-            Já possui uma conta de membro? <a href="#">Acesse seu perfil</a>
-        </div>
-    </div>
+    </script>
 
+    <!-- Carregado uma única vez (antes estava duplicado) -->
     <script src="cadastro.js"></script>
-</body>
-</html>
 </body>
 </html>
