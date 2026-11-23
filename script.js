@@ -96,7 +96,7 @@ const produtos = [
     {
         nome: "Lattafa Yara Moi EDP 100ml",
         preco: 199.00,
-        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1689132-450-450/17746146548180.jpg?v=639104996669200000",
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3082538-800-800/17876668234119.jpg?v=639241282605700000",
         categoria: "principais",
         genero: "feminino",
         descricao: "Da linha Yara: charme leve e cremoso, para o dia a dia com um toque de sofisticação."
