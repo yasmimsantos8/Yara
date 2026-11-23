@@ -1,4 +1,3 @@
-
 // CARRINHO
 let carrinho = [];
 
@@ -26,61 +25,1071 @@ function perfume(nome, preco, genero, categoria, descricao) {
 // PRODUTOS
 const produtos = [
     {
-        nome: "Sahari Sultana Halima EDP 100ml",
-        preco: 239.90,
-        imagem: "https://down-br.img.susercontent.com/file/br-11134207-81z1k-mhdi0ye3l4ate4",
+        nome: "Lattafa Asad EDP 100ml",
+        preco: 229.90,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1353090-450-450/17658192790332.jpg?v=639020377597700000",
+        categoria: "maisVendidos",
+        genero: "masculino",
+        descricao: "Intenso e envolvente: pimenta-preta, abacaxi, tabaco, baunilha e patchouli compõem um masculino de grande projeção."
+    },
+    {
+        nome: "Lattafa Asad Bourbon EDP 100ml",
+        preco: 239.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2200540-450-450/17791344455652.jpg?v=639154023521900000",
+        categoria: "novidades",
+        genero: "masculino",
+        descricao: "Releitura gourmand e amadeirada de Asad, com calor aveludado e acabamento sofisticado."
+    },
+    {
+        nome: "Lattafa Asad Elixir EDP 100ml",
+        preco: 259.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1333443-800-800/17653114046572.jpg?v=639009661902170000",
+        categoria: "novidades",
+        genero: "masculino",
+        descricao: "Versão mais concentrada de Asad, para quem busca presença noturna e rastro duradouro."
+    },
+    {
+        nome: "Lattafa Khamrah EDP 100ml",
+        preco: 289.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2124645-450-450/17787307752610.jpg?v=639147432722030000",
+        categoria: "maisVendido",
+        genero: "unissex",
+        descricao: "Canela, tâmara, praliné, baunilha e fava tonka em um oriental gourmand caloroso e sedutor."
+    },
+    
+
+    {
+    nome: "Lattafa Khamrah Qahwa EDP 100ml",
+    preco: 299.00,
+    imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2124644-450-450/17787307723104.jpg?v=639147432721870000",
+    categoria: "maisVendidos",
+    genero: "unissex",
+    descricao: "Café, cardamomo, canela e baunilha em uma interpretação luxuosa e aconchegante."
+},
+
+    {
+    nome: "Lattafa Yara EDP 100ml",
+    preco: 199.00,
+    imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1403125-450-450/17689190079833.jpg?v=639053002936670000",
+    categoria: "maisVendidos",
+    genero: "feminino",
+    descricao: "Orquídea, heliotrópio, frutas tropicais, baunilha e almíscar em um floral doce, suave e delicado."
+},
+    
+  
+{
+        nome: "Lattafa Yara Candy EDP 100ml",
+        preco: 199.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/930468-450-450/17533596805022.jpg?v=638889572424000000",
+        categoria: "novidades",
+        genero: "feminino",
+        descricao: "Da linha Yara: doce, frutado e luminoso, com personalidade jovem e romântica."
+    },
+    {
+        nome: "Lattafa Yara Tous EDP 100ml",
+        preco: 199.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1595914-450-450/17721694456643.jpg?v=639091710593870000",
+        categoria: "novidades",
+        genero: "feminino",
+        descricao: "Da linha Yara: delicadeza feminina em um perfil suave, confortável e envolvente."
+    },
+    {
+        nome: "Lattafa Yara Moi EDP 100ml",
+        preco: 199.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1689132-450-450/17746146548180.jpg?v=639104996669200000",
         categoria: "principais",
         genero: "feminino",
-        descricao: "Uma fragrância feminina de assinatura árabe, pensada para presença marcante e elegância atemporal."
+        descricao: "Da linha Yara: charme leve e cremoso, para o dia a dia com um toque de sofisticação."
     },
     {
-        nome: "kit perfumação com 5 Body Splash Xerosa",
-        preco: 150.30,
-        imagem: "https://www.salonline.com.br/ccstore/v1/images/?source=/file/v8372869211055809370/products/33653.jpg&height=940&width=940",
-        categoria: "principais"
+        nome: "Lattafa Raghba EDP 100ml",
+        preco: 189.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3160131-450-450/17882053606839.jpg?v=639250869024400000",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Baunilha, âmbar, oud, sândalo e incenso: um oriental masculino quente e marcante."
     },
     {
-        nome: "Kit Completo SOS Cachos De Repente Pronta",
-        preco: 160.20,
-        imagem: "https://www.salonline.com.br/ccstore/v1/images/?source=/file/v5155328260216366914/products/32720.jpg&height=940&width=940",
-        categoria: "principais"
+        nome: "Lattafa Raghba Wood Intense EDP 100ml",
+        preco: 209.00,
+        imagem: "https://images.snoonu.com/product/2026-4/e8f43c0b-6568-492c-a4ce-346481a8bdf1_2_0c75315f68134f2693b0aa1c4807dd11_800x.webp",
+        categoria: "novidades",
+        genero: "masculino",
+        descricao: "Releitura amadeirada e intensa de Raghba, com profundidade e elegância noturna."
     },
     {
-        nome: "Kit Tratamento e Finalização Cachos Ostentação",
-        preco: 148.95,
-        imagem: "https://www.salonline.com.br/ccstore/v1/images/?source=/file/v883330640618203797/products/33691.jpg&height=940&width=940",
-        categoria: "novidades"
+        nome: "Lattafa Oud Mood EDP 100ml",
+        preco: 249.00,
+        imagem: "https://m.media-amazon.com/images/I/61txY9DtzEL.jpg",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Um oud refinado e acolhedor, que traduz a tradição olfativa do Oriente com sofisticação."
     },
     {
-        nome: "Kit 2 Cremes para Pentear Cachos de Sereia e Cachos à Prova",
-        preco: 75.60,
-        imagem: "https://www.salonline.com.br/ccstore/v1/images/?source=/file/v5125349893167266216/products/33678.jpg&height=940&width=940",
-        categoria: "novidades"
+        nome: "Lattafa Oud Mood Elixir EDP 100ml",
+        preco: 269.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3031488-450-450/17876250834065.jpg?v=639234482035130000",
+        categoria: "novidades",
+        genero: "unissex",
+        descricao: "Versão mais profunda de Oud Mood, com acordes escuros, amadeirados e sedutores."
     },
     {
-        nome: "Duplinha de Kits Xêrosa Body Splash e Creme para Pentear",
-        preco: 160.20,
-        imagem: "https://www.salonline.com.br/ccstore/v1/images/?source=/file/v1187472468471536226/products/33706.jpg&height=940&width=940",
-        categoria: "novidades"
+        nome: "Lattafa Eclaire EDP 100ml",
+        preco: 219.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1562221-450-450/17706507714881.jpg?v=639087663207270000",
+        categoria: "maisVendidos",
+        genero: "feminino",
+        descricao: "Caramelo, leite e baunilha em uma fragrância feminina gourmand, cremosa e irresistível."
     },
     {
-        nome: "Kit Definição Natural com Mousse e Creme para Pentear",
-        preco: 64.35,
-        imagem: "https://www.salonline.com.br/ccstore/v1/images/?source=/file/v5155328260216366914/products/32720.jpg&height=940&width=940",
-        categoria: "maisVendidos"
+        nome: "Lattafa Haya EDP 100ml",
+        preco: 189.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3219518-450-450/17890466202696.jpg?v=639256947453130000",
+        categoria: "principais",
+        genero: "feminino",
+        descricao: "Feminina e elegante, com perfil suave e envolvente para uso diário."
     },
     {
-        nome: "Kit Completo de Definição Natural + De Repente Pronta",
-        preco: 191.70,
-        imagem: "https://www.salonline.com.br/ccstore/v1/images/?source=/file/v6244206327497156262/products/33408_.jpg&height=940&width=940",
-        categoria: "maisVendidos"
+        nome: "Lattafa Hayaati EDP 100ml",
+        preco: 189.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2466040-450-450/17816335324976.jpg?v=639174114567430000",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Masculino de caráter moderno, com frescor elegante e boa versatilidade."
     },
     {
-        nome: "Kit Definição Natural com Mousse, Óleo Booster, Máscara e Óleo de Tratamento",
-        preco: 106.20,
-        imagem: "https://www.salonline.com.br/ccstore/v1/images/?source=/file/v7013296204912457392/products/33728.png&height=940&width=940",
-        categoria: "maisVendidos"
+        nome: "Lattafa Qaed Al Fursan EDP 90ml",
+        preco: 169.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3119387-800-800/17883965048503.jpg?v=639245635009500000",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Frutado e luminoso, com assinatura marcante e personalidade vibrante."
     },
+    {
+        nome: "Lattafa Mayar EDP 100ml",
+        preco: 199.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3307059-800-800/17912559694676.jpg?v=639268880927030000",
+        categoria: "principais",
+        genero: "feminino",
+        descricao: "Floral e delicado, uma fragrância feminina de charme discreto e sofisticado."
+    },
+    {
+        nome: "Lattafa Ana Abiyedh EDP 60ml",
+        preco: 149.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2124719-450-450/17787299133288.jpg?v=639147432733300000",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Um perfil limpo e luminoso, com sensação de pureza e elegância."
+    },
+    {
+        nome: "Lattafa Fakhar Lattafa Black EDP 100ml",
+        preco: 189.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2833574-450-450/17854376659392.jpg?v=639211141937200000",
+        categoria: "maisVendidos",
+        genero: "masculino",
+        descricao: "Masculino sofisticado e marcante, pensado para quem valoriza presença e distinção."
+    },
+    {
+        nome: "Lattafa Fakhar Lattafa Rose EDP 100ml",
+        preco: 189.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2978953-450-450/17871562915256.jpg?v=639228310825100000",
+        categoria: "principais",
+        genero: "feminino",
+        descricao: "Feminino floral e elegante, com delicadeza e acabamento luxuoso."
+    },
+    {
+        nome: "Lattafa Bade'e Al Oud Honor & Glory EDP 100ml",
+        preco: 229.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/4038889-450-450/17939753421810.jpg?v=639299173135270000",
+        categoria: "novidades",
+        genero: "unissex",
+        descricao: "Cremoso e sofisticado, da linha Bade'e Al Oud, com nobreza oriental."
+    },
+    {
+        nome: "Lattafa Bade'e Al Oud Amethyst EDP 100ml",
+        preco: 229.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2724344-450-450/17836091874448.jpg?v=639198190439370000",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Da linha Bade'e Al Oud: elegância árabe em uma composição envolvente e refinada."
+    },
+    {
+        nome: "Lattafa Bade'e Al Oud Sublime EDP 100ml",
+        preco: 229.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1030401-450-450/17581348731728.jpg?v=638937316765800000",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Da linha Bade'e Al Oud: sofisticação oriental com profundidade e brilho."
+    },
+    {
+        nome: "Lattafa Bade'e Al Oud Oud for Glory EDP 100ml",
+        preco: 239.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1038671-450-450/17581403817839.jpg?v=638937371853000000",
+        categoria: "maisVendidos",
+        genero: "unissex",
+        descricao: "Açafrão, noz-moscada, oud e âmbar: um oriental opulento, de forte identidade árabe."
+    },
+    {
+        nome: "Lattafa Teriaq EDP 100ml",
+        preco: 219.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2199426-450-450/17791345535644.jpg?v=639154019554270000",
+        categoria: "novidades",
+        genero: "unissex",
+        descricao: "Uma fragrância de caráter oriental, envolvente e de grande presença."
+    },
+    {
+        nome: "Lattafa Maahir EDP 100ml",
+        preco: 169.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1388068-450-450/17685799805377.jpg?v=639041868509830000",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Masculino versátil, com elegância discreta para o dia a dia."
+    },
+    {
+        nome: "Lattafa Her Confession EDP 100ml",
+        preco: 189.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3389118-450-450/17915617047328.jpg?v=639274977865500000",
+        categoria: "novidades",
+        genero: "feminino",
+        descricao: "Feminina e sedutora, com acabamento doce e delicado."
+    },
+    {
+        nome: "Lattafa Sakeena EDP 100ml",
+        preco: 189.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3208890-450-450/17890472997491.jpg?v=639256248063070000",
+        categoria: "principais",
+        genero: "feminino",
+        descricao: "Charme feminino em uma composição suave, serena e sofisticada."
+    },
+    {
+        nome: "Lattafa Atheeri EDP 100ml",
+        preco: 199.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1806348-450-450/17761108971244.jpg?v=639117926466170000",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Perfil oriental acolhedor, que valoriza a tradição da perfumaria árabe."
+    },
+    {
+        nome: "Lattafa Mohra Silky Rose EDP 100ml",
+        preco: 219.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2834419-450-450/17843242490630.jpg?v=639211172176900000",
+        categoria: "novidades",
+        genero: "feminino",
+        descricao: "Rosa em tom aveludado e feminino, com delicadeza e elegância."
+    },
+    {
+        nome: "Lattafa Eternal Oud EDP 100ml",
+        preco: 229.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2202813-450-450/17794842392366.jpg?v=639154040999530000",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Oud intenso e sofisticado, para quem aprecia a profundidade da perfumaria oriental."
+    },
+    {
+        nome: "Lattafa Ameeri EDP 100ml",
+        preco: 199.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/598703-800-800/ameeri-al-wataniah-perfume-feminino-edp--2-.jpg?v=638466382722900000",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Masculino de postura nobre, com perfil elegante e duradouro."
+    },
+    {
+        nome: "Lattafa Musamam Black Intense EDP 100ml",
+        preco: 189.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3315303-450-450/17913077419002.jpg?v=639270616302470000",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Intenso e misterioso, um perfil escuro para ocasiões noturnas."
+    },
+    {
+        nome: "Lattafa Hayaati Gold Elixir EDP 100ml",
+        preco: 209.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2904804-450-450/17855784367855.jpg?v=639219648367500000",
+        categoria: "novidades",
+        genero: "masculino",
+        descricao: "Versão mais rica de Hayaati, com acabamento luxuoso e rastro marcante."
+    },
+
+
+    // ================= AFNAN =================
+
+    {
+        nome: "Afnan 9PM EDP 100ml",
+        preco: 329.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3315198-450-450/17914573144918.jpg?v=639270615019600000",
+        categoria: "maisVendidos",
+        genero: "masculino",
+        descricao: "Maçã, canela, lavanda, baunilha, fava tonka e âmbar: um masculino sedutor para as noites."
+    },
+    {
+        nome: "Afnan 9PM Rebel EDP 100ml",
+        preco: 339.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3287529/17906016566724.jpg?v=639276943184700000",
+        categoria: "novidades",
+        genero: "masculino",
+        descricao: "Da linha 9PM, com personalidade ousada e perfil noturno envolvente."
+    },
+    {
+        nome: "Afnan 9AM EDP 100ml",
+        preco: 319.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3580738-450-450/17926052129917.jpg?v=639282100292470000",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Fresco e moderno, uma assinatura elegante para começar o dia."
+    },
+    {
+        nome: "Afnan 9AM Dive EDP 100ml",
+        preco: 329.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2901982-450-450/17855866982382.jpg?v=639219578477100000",
+        categoria: "novidades",
+        genero: "unissex",
+        descricao: "Da linha 9AM, com frescor energizante e acabamento sofisticado."
+    },
+    {
+        nome: "Afnan Supremacy Not Only Intense EDP 100ml",
+        preco: 359.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2585295-450-450/17826326672600.jpg?v=639185126358770000",
+        categoria: "maisVendidos",
+        genero: "masculino",
+        descricao: "Masculino intenso e de alta projeção, para quem deseja deixar marca por onde passa."
+    },
+    {
+        nome: "Afnan Supremacy Silver EDP 100ml",
+        preco: 349.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3599180-450-450/17926306886289.jpg?v=639282968354270000",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Frescor refinado e postura elegante em uma assinatura masculina moderna."
+    },
+    {
+        nome: "Afnan Turathi Blue EDP 90ml",
+        preco: 299.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3129339-450-450/17872188111165.jpg?v=639246828462370000",
+        categoria: "maisVendidos",
+        genero: "unissex",
+        descricao: "Da linha Turathi: elegância árabe contemporânea, com frescor sofisticado."
+    },
+    {
+        nome: "Afnan Turathi Brown EDP 90ml",
+        preco: 299.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2722363-450-450/17833633816194.jpg?v=639198182636830000",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Da linha Turathi: calor e profundidade em um perfil elegante e acolhedor."
+    },
+    {
+        nome: "Afnan Turathi Electric EDP 90ml",
+        preco: 299.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2901956-450-450/17855867154805.jpg?v=639219578468300000",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Da linha Turathi: vibrante e moderno, com personalidade marcante."
+    },
+    {
+        nome: "Afnan Modest Pour Femme EDP 100ml",
+        preco: 289.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1194490-450-450/17619438884864.jpg?v=638979567860900000",
+        categoria: "principais",
+        genero: "feminino",
+        descricao: "Feminina e refinada, com delicadeza e acabamento elegante."
+    },
+    {
+        nome: "Afnan Rare Carbon EDP 100ml",
+        preco: 349.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3599109-450-450/17926943365765.jpg?v=639282968339930000",
+        categoria: "novidades",
+        genero: "masculino",
+        descricao: "Masculino sofisticado, de caráter moderno e presença discreta."
+    },
+
+    // ================= ARMAF =================
+
+    {
+        nome: "Armaf Club de Nuit Intense Man EDT 105ml",
+        preco: 429.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1571706-450-450/17691914703271.jpg?v=639088648832370000",
+        categoria: "maisVendidos",
+        genero: "masculino",
+        descricao: "Limão, abacaxi, groselha-preta, bétula, âmbar e almíscar: um masculino icônico e intenso."
+    },
+    {
+        nome: "Armaf Club de Nuit Sillage EDP 105ml",
+        preco: 449.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2817716-450-450/17763618683578.jpg?v=639209316773570000",
+        categoria: "novidades",
+        genero: "masculino",
+        descricao: "Da linha Club de Nuit: elegância marcante com rastro de grande presença."
+    },
+    {
+        nome: "Armaf Club de Nuit Untold EDP 105ml",
+        preco: 449.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2327915-450-450/17799911832222.jpg?v=639162846527000000",
+        categoria: "novidades",
+        genero: "unissex",
+        descricao: "Da linha Club de Nuit: sofisticação intensa para ocasiões especiais."
+    },
+    {
+        nome: "Armaf Club de Nuit Milestone EDP 105ml",
+        preco: 429.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1386488-450-450/17581350794726.jpg?v=639041672458900000",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Da linha Club de Nuit: moderno e sofisticado, com perfil versátil."
+    },
+    {
+        nome: "Armaf Club de Nuit Iconic EDP 105ml",
+        preco: 439.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/809900-450-450/00117399186212786.jpg?v=638780778561830000",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Da linha Club de Nuit: caráter marcante e acabamento luxuoso."
+    },
+    {
+        nome: "Armaf Club de Nuit Woman EDP 105ml",
+        preco: 389.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2199392-450-450/17787247644684.jpg?v=639154019546000000",
+        categoria: "principais",
+        genero: "feminino",
+        descricao: "Feminina e elegante, da linha Club de Nuit, para presença noturna sofisticada."
+    },
+    {
+        nome: "Armaf Club de Nuit Urban Elixir EDP 105ml",
+        preco: 459.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1568782-450-450/17726059804457.jpg?v=639088531475900000",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Da linha Club de Nuit: perfil urbano, intenso e de longa duração."
+    },
+    {
+        nome: "Armaf Odyssey Mandarin Sky EDP 100ml",
+        preco: 329.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1004419-450-450/17575357069391.jpg?v=638931326266100000",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Fresco e vibrante, um masculino moderno com elegância luminosa."
+    },
+    {
+        nome: "Armaf Odyssey Homme EDP 100ml",
+        preco: 319.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2926346-450-450/17859308362826.jpg?v=639222354459370000",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Masculino de assinatura contemporânea, com sofisticação e boa versatilidade."
+    },
+    {
+        nome: "Armaf Tres Nuit EDP 100ml",
+        preco: 339.00,
+        imagem: "https://m.media-amazon.com/images/I/71ZScSjjB1L._AC_UF1000,1000_QL80_.jpg",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Fragrância masculina de perfil fresco e elegante, ideal para o dia a dia."
+    },
+    {
+        nome: "Armaf Hunter Intense EDP 100ml",
+        preco: 329.00,
+        imagem: "https://armafperfume.com/cdn/shop/files/TCB_3905_1_1024x1024.jpg?v=1716030228",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Masculino de presença forte e acabamento intenso, para quem gosta de se destacar."
+    },
+    {
+        nome: "Armaf Tag-Him EDP 100ml",
+        preco: 279.00,
+        imagem: "https://m.media-amazon.com/images/I/618wVL4iJgS.jpg",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Elegância masculina clássica, com perfil limpo e versátil."
+    },
+    {
+        nome: "Armaf Vanity Femme Essence EDP 100ml",
+        preco: 329.00,
+        imagem: "https://www.drogasil.com.br/_next/image?url=https%3A%2F%2Fproduct-data.raiadrogasil.io%2Fimages%2F16355135.webp&w=3840&q=40",
+        categoria: "novidades",
+        genero: "feminino",
+        descricao: "Feminina e luxuosa, com acabamento sofisticado e envolvente."
+    },
+    {
+        nome: "Armaf Derby Club House EDT 100ml",
+        preco: 269.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3951890-450-450/17936976216080.jpg?v=639295903976800000",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Masculino clássico e elegante, com ar refinado de clube."
+    },
+    {
+        nome: "Armaf Le Parfait Pour Femme EDP 100ml",
+        preco: 299.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3031368-450-450/17875707215489.jpg?v=639234482014830000",
+        categoria: "principais",
+        genero: "feminino",
+        descricao: "Feminina e sofisticada, com delicadeza e charme atemporal."
+    },
+
+// ================= MAISON ALHAMBRA =================
+
+{
+        nome: "Maison Alhambra Jean Lowe Immortel EDP 100ml",
+        preco: 239.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2078424-450-450/17786920947045.jpg?v=639143650897870000",
+        categoria: "maisVendidos",
+        genero: "masculino",
+        descricao: "Masculino de presença elegante e rastro marcante, com acabamento refinado."
+    },
+    {
+        nome: "Maison Alhambra Jean Lowe Ombre EDP 100ml",
+        preco: 239.00,
+        imagem: "https://a-static.mlcdn.com.br/420x420/maison-alhambra-jean-lowe-ombre-eau-de-parfum-perfume-unissex-100ml/kassioperfumaria/6291108735534/056cb7b840bc5e575a85a4e12b9dfc04.jpeg",
+        categoria: "novidades",
+        genero: "masculino",
+        descricao: "Perfil masculino profundo e misterioso, para noites sofisticadas."
+    },
+    {
+        nome: "Maison Alhambra Salvo EDP 100ml",
+        preco: 219.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2857516-450-450/17836414808238.jpg?v=639213870828130000",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Masculino fresco e moderno, com elegância natural e versatilidade."
+    },
+    {
+        nome: "Maison Alhambra Salvo Elixir EDP 100ml",
+        preco: 239.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2727463-450-450/17793543517312.jpg?v=639198269905230000",
+        categoria: "novidades",
+        genero: "masculino",
+        descricao: "Versão mais intensa de Salvo, com profundidade e presença."
+    },
+    {
+        nome: "Maison Alhambra Delilah EDP 100ml",
+        preco: 219.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1519251-450-450/17658146153819.jpg?v=639080568268400000",
+        categoria: "principais",
+        genero: "feminino",
+        descricao: "Feminina e sedutora, com charme sofisticado e envolvente."
+    },
+    {
+        nome: "Maison Alhambra Kismet EDP 100ml",
+        preco: 209.00,
+        imagem: "https://images.tcdn.com.br/img/img_prod/1144493/perfume_kismet_for_men_eau_de_parfum_maison_alhambra_100ml_masculino_7264_1_4afae0cfe5c49d1a55ecffb432a4e3c6.jpg",
+        categoria: "principais",
+        genero: "feminino",
+        descricao: "Feminina e delicada, com perfil romântico e elegante."
+    },
+    {
+        nome: "Maison Alhambra Kismet Angel EDP 100ml",
+        preco: 209.00,
+        imagem: "https://m.media-amazon.com/images/I/71hdNPh1T9L.jpg",
+        categoria: "novidades",
+        genero: "feminino",
+        descricao: "Da linha Kismet: leveza e doçura em uma assinatura feminina encantadora."
+    },
+    {
+        nome: "Maison Alhambra Philos Centro EDP 100ml",
+        preco: 219.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3219622-450-450/17890546579426.jpg?v=639256947465030000",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Unissex de perfil moderno, com sofisticação discreta e elegante."
+    },
+    {
+        nome: "Maison Alhambra Philos Pura EDP 100ml",
+        preco: 219.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2724355-450-450/17836364622534.jpg?v=639198190446570000",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Unissex limpo e luminoso, com acabamento refinado."
+    },
+    {
+        nome: "Maison Alhambra Tobacco Touch EDP 100ml",
+        preco: 219.00,
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiKg6cEk2xuZBRF00YyVjChN2S8cXCvdJMESmiowqQHraliFxYFqjMpK8&s=10",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Masculino de caráter quente e envolvente, com acorde de tabaco."
+    },
+
+
+    // ================= PARIS CORNER =================
+
+{
+    nome: "Paris Corner Emir Sacred Wood EDP 100ml",
+    preco: 259.00,
+    imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2990192-450-450/17872532551256.jpg?v=639229160627130000",
+    categoria: "novidades",
+    genero: "unissex",
+    descricao: "Amadeirado e sofisticado, com perfil sereno e elegante."
+},
+
+
+// ================= RASASI =================
+    {
+        nome: "Rasasi Hawas For Him EDP 100ml",
+        preco: 389.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1688736-450-450/17688254397811.jpg?v=639104991702970000",
+        categoria: "maisVendidos",
+        genero: "masculino",
+        descricao: "Aquático e frutado, um masculino vibrante, refrescante e de grande projeção."
+    },
+    {
+        nome: "Rasasi Hawas Ice EDP 100ml",
+        preco: 399.00,
+        imagem: "https://m.media-amazon.com/images/I/71DfESbdC8L._AC_UF1000,1000_QL80_.jpg",
+        categoria: "novidades",
+        genero: "masculino",
+        descricao: "Da linha Hawas: frescor gelado e energia, perfeito para os dias quentes."
+    },
+    {
+        nome: "Rasasi Hawas Elixir EDP 100ml",
+        preco: 419.00,
+        imagem: "https://m.media-amazon.com/images/I/81suCtKCegL.jpg",
+        categoria: "novidades",
+        genero: "masculino",
+        descricao: "Da linha Hawas, em versão mais concentrada e de maior presença."
+    },
+    {
+        nome: "Rasasi Hawas Black EDP 100ml",
+        preco: 399.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2835299-450-450/17843229975680.jpg?v=639211176972070000",
+        categoria: "maisVendidos",
+        genero: "masculino",
+        descricao: "Da linha Hawas: perfil escuro, sofisticado e noturno."
+    },
+    {
+        nome: "Rasasi Hawas For Her EDP 100ml",
+        preco: 379.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2834472-450-450/17843240980754.jpg?v=639211173029300000",
+        categoria: "principais",
+        genero: "feminino",
+        descricao: "Feminina e vibrante, da linha Hawas, com frescor e sensualidade."
+    },
+    {
+        nome: "Rasasi La Yuqawam EDP 75ml",
+        preco: 449.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2723279-450-450/17833630358287.jpg?v=639198186187030000",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Fragrância masculina de caráter oriental, com elegância e longa fixação."
+    },
+    {
+        nome: "Rasasi Fattan Pour Homme EDP 100ml",
+        preco: 399.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2655250-450-450/17833635643576.jpg?v=639191159125300000",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Masculino sofisticado e envolvente, com assinatura da tradição árabe."
+    },
+    {
+        nome: "Rasasi Fattan Pour Femme EDP 100ml",
+        preco: 399.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2653234-450-450/17829307918380.jpg?v=639191123046230000",
+        categoria: "principais",
+        genero: "feminino",
+        descricao: "Feminina e magnética, com sofisticação clássica."
+    },
+    {
+        nome: "Rasasi Egra EDP 75ml",
+        preco: 379.00,
+        imagem: "https://fimgs.net/mdimg/perfume/o.19677.jpg",
+        categoria: "principais",
+        genero: "feminino",
+        descricao: "Feminina oriental, com charme marcante e acabamento elegante."
+    },
+    {
+        nome: "Rasasi Daarej Pour Homme EDP 100ml",
+        preco: 389.00,
+        imagem: "https://m.media-amazon.com/images/I/61BUbn9oprL._AC_UF1000,1000_QL80_.jpg",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Masculino refinado, com perfil elegante e presença discreta."
+    },
+    {
+        nome: "Rasasi Faqat Lil Rijal EDP 50ml",
+        preco: 349.00,
+        imagem: "https://m.media-amazon.com/images/I/61lWNmAIzYL._AC_UF350,350_QL80_.jpg",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Pensado para o homem de personalidade forte, com assinatura marcante."
+    },
+    {
+        nome: "Rasasi Rumz Al Rasasi 9325 Pour Lui EDP 50ml",
+        preco: 369.00,
+        imagem: "https://m.media-amazon.com/images/I/61QmVXPbNGL.jpg",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Elegância masculina clássica, com perfil sofisticado e atemporal."
+    },
+    {
+        nome: "Rasasi Shuhrah Pour Homme EDP 90ml",
+        preco: 349.00,
+        imagem: "https://m.media-amazon.com/images/I/615BTceXVTL._AC_UF1000,1000_QL80_.jpg",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Masculino de charme oriental, envolvente e elegante."
+    },
+    {
+        nome: "Rasasi Blue Lady EDP 75ml",
+        preco: 339.00,
+        imagem: "https://m.media-amazon.com/images/I/51aZCLsZ0WL.jpg",
+        categoria: "principais",
+        genero: "feminino",
+        descricao: "Feminina e luminosa, com frescor delicado e elegância."
+    },
+
+
+    // ================= SWISS ARABIAN =================
+    {
+        nome: "Swiss Arabian Layali EDP 50ml",
+        preco: 389.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2974791-450-450/17871959201894.jpg?v=639228290704800000",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Oriental luxuoso, que celebra a opulência das noites árabes."
+    },
+    {
+        nome: "Swiss Arabian Casablanca EDP 100ml",
+        preco: 349.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3747516-450-450/17931281964911.jpg?v=639288772588270000",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Inspirado no exotismo oriental, com elegância envolvente."
+    },
+    {
+        nome: "Swiss Arabian Shumoukh EDP 100ml",
+        preco: 359.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2982765-450-450/17871958621303.jpg?v=639228449040770000",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Sofisticação árabe em um perfil intenso e de longa duração."
+    },
+    {
+        nome: "Swiss Arabian Mukhallat Malaki EDP 100ml",
+        preco: 379.00,
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsACE9dpVrnld0uzmU7KUhRFULqllmjlaFHHZFRQyOSb9YiWK06Q6N5yIV&s=10",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Um mukhallat de nobreza oriental, pensado para ocasiões especiais."
+    },
+    {
+        nome: "Swiss Arabian Amaken EDP 100ml",
+        preco: 319.00,
+        imagem: "https://m.media-amazon.com/images/I/41lK2yHSdhL._AC_UF1000,1000_QL80_.jpg",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Perfil oriental acolhedor, com identidade elegante."
+    },
+    {
+        nome: "Swiss Arabian Rakaan EDP 100ml",
+        preco: 329.00,
+        imagem: "https://fragrances.com.ng/media/catalog/product/cache/0daeb07bb1d294c1f281fab47369d56a/s/w/swiss_arabian_rakaan_edp_.jpeg",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Fragrância de caráter marcante, com assinatura sofisticada."
+    },
+
+    // ================= AL HARAMAIN =================
+    {
+        nome: "Al Haramain Amber Oud Gold Edition EDP 120ml",
+        preco: 499.00,
+        imagem: "https://m.media-amazon.com/images/I/61x3GvRF53L.jpg",
+        categoria: "maisVendidos",
+        genero: "unissex",
+        descricao: "Perfil âmbar amadeirado, opulento e luminoso, uma das assinaturas mais admiradas da casa."
+    },
+    {
+        nome: "Al Haramain Amber Oud Dubai Night EDP 120ml",
+        preco: 519.00,
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-KaF_5W14KFXJNHfbzC26bSMhW3HSEkK7BquYPe3FdVOBGPPmp8u50Ss&s=10",
+        categoria: "novidades",
+        genero: "unissex",
+        descricao: "Da linha Amber Oud: elegância noturna com sofisticação oriental."
+    },
+    {
+        nome: "Al Haramain Amber Oud Ruby Edition EDP 120ml",
+        preco: 509.00,
+        imagem: "https://m.media-amazon.com/images/I/61WuI9KeeeL.jpg",
+        categoria: "novidades",
+        genero: "unissex",
+        descricao: "Da linha Amber Oud: intenso e sedutor, com perfil oriental marcante."
+    },
+    {
+        nome: "Al Haramain Amber Oud White Edition EDP 120ml",
+        preco: 509.00,
+        imagem: "https://m.media-amazon.com/images/I/61VSQFlPUdL.jpg",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Da linha Amber Oud: luminosidade e refinamento em perfil elegante."
+    },
+    {
+        nome: "Al Haramain Amber Oud Blue Edition EDP 120ml",
+        preco: 509.00,
+        imagem: "https://m.media-amazon.com/images/I/61bMgbF0duL.jpg",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Da linha Amber Oud: frescor sofisticado e personalidade moderna."
+    },
+    {
+        nome: "Al Haramain Detour Noir EDP 100ml",
+        preco: 449.00,
+        imagem: "https://shop.alharamainperfumes.com/media/catalog/product/cache/490c4e3bbae272be3ce2b30a9945698e/a/h/ahp1882-detour-noir_1_.jpg",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Escuro e elegante, para quem prefere uma assinatura misteriosa."
+    },
+    {
+        nome: "Al Haramain L'Aventure EDP 100ml",
+        preco: 389.00,
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUo1D0dfJV_I9pXag_6tWd6BVJU7ivJKgEfORVGAA5RguRUaIQY-w0-nw&s=10",
+        categoria: "maisVendidos",
+        genero: "masculino",
+        descricao: "Masculino de postura confiante, com frescor sofisticado e grande projeção."
+    },
+    {
+        nome: "Al Haramain L'Aventure Intense EDP 100ml",
+        preco: 419.00,
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSV3SImBu4o-jgbIcvhhrn4v742eZXQwwGSTAjQetHo6t4VvjmTQMX-ZVE&s=10",
+        categoria: "novidades",
+        genero: "masculino",
+        descricao: "Versão mais profunda de L'Aventure, para presença forte e elegante."
+    },
+
+    // ================= KHADLAJ =================
+    {
+        nome: "Khadlaj Shiyaaka EDP 100ml",
+        preco: 219.00,
+        imagem: "https://m.media-amazon.com/images/I/91sWd9BjIKL._AC_UF1000,1000_QL80_.jpg",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Masculino vibrante e moderno, com personalidade marcante."
+    },
+    {
+        nome: "Khadlaj Icon EDP 100ml",
+        preco: 229.00,
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTW9JjoeCQGFvZDYuZqr4BJE-_WYfLkNPw9RD7nyLDxw&s",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Fragrância masculina de assinatura elegante e presença forte."
+    },
+
+    // ================= FRAGRANCE WORLD / FRENCH AVENUE =================
+    {
+        nome: "Fragrance World Barakkat Rouge 540 Extrait 70ml",
+        preco: 249.00,
+        imagem: "https://habibicollections.com/wp-content/uploads/6a7de1412348a8464f398126.jpg",
+        categoria: "maisVendidos",
+        genero: "unissex",
+        descricao: "Açafrão, jasmim, âmbar e cedro: um extrato luminoso, adocicado e de rastro envolvente."
+    },
+    {
+        nome: "Fragrance World Barakkat Rouge 540 EDP 100ml",
+        preco: 229.00,
+        imagem: "https://carrefourbr.vtexassets.com/arquivos/ids/213326860-848-848/image-0.jpg?v=639089286172870000",
+        categoria: "novidades",
+        genero: "unissex",
+        descricao: "Versão em eau de parfum da assinatura Barakkat Rouge, elegante e luminosa."
+    },
+    {
+        nome: "Fragrance World Barakkat Satin Oud EDP 100ml",
+        preco: 229.00,
+        imagem: "https://www.perfumenz.co.nz/cdn/shop/files/fragrance-world-barakkat-satin-oud---2_1525d87c-e5fe-4afe-a3a3-dbc6285cf4ef_700x700.png?v=1741753663",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Oud de toque acetinado, com perfil oriental sofisticado."
+    },
+    {
+        nome: "French Avenue Liquid Brun EDP 100ml",
+        preco: 239.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2355846-800-800/17805547739898.jpg?v=639166075207270000",
+        categoria: "novidades",
+        genero: "masculino",
+        descricao: "Masculino quente e envolvente, com assinatura sofisticada."
+    },
+    {
+        nome: "French Avenue Vulcan Feu EDP 100ml",
+        preco: 239.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1152649-800-800/17609927105740.jpg?v=638968247392170000",
+        categoria: "novidades",
+        genero: "unissex",
+        descricao: "Intenso e marcante, com personalidade ardente."
+    },
+
+    // ================= AJMAL =================
+    {
+        nome: "Ajmal Evoke Him EDP 90ml",
+        preco: 389.00,
+        imagem: "https://jmkperfumes.com/cdn/shop/files/AJMAL-EVOKE-HIM.jpg?v=1741616018",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Masculino moderno e elegante, com a tradição de perfumaria da Ajmal."
+    },
+    {
+        nome: "Ajmal Evoke Her EDP 90ml",
+        preco: 389.00,
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBrmAlQdKNXuuNmzZEeOEPOQQB4h4DqJE8ruUa3KoCWJZvkVCuS8TESiI&s=10",
+        categoria: "principais",
+        genero: "feminino",
+        descricao: "Feminina e sofisticada, uma fragrância de charme moderno."
+    },
+    {
+        nome: "Ajmal Sacrifice Him EDP 100ml",
+        preco: 419.00,
+        imagem: "https://beautyboxjo.com/cdn/shop/files/AjmalSacrificeEdpPerfumeForMen100ml.jpg?v=1789389352",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Masculino intenso e sedutor, de grande personalidade."
+    },
+    {
+        nome: "Ajmal Sacrifice Her EDP 100ml",
+        preco: 419.00,
+        imagem: "https://www.drogasil.com.br/_next/image?url=https%3A%2F%2Fproduct-data.raiadrogasil.io%2Fimages%2F16350383.webp&w=3840&q=40",
+        categoria: "principais",
+        genero: "feminino",
+        descricao: "Feminina e sensual, com perfil envolvente e marcante."
+    },
+    {
+        nome: "Ajmal Wisal EDP 50ml",
+        preco: 359.00,
+        imagem: "https://m.media-amazon.com/images/I/81VE7YT89SL.jpg",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Unissex de caráter oriental, com elegância e profundidade."
+    },
+    {
+        nome: "Ajmal Aristocrat EDP 75ml",
+        preco: 349.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3751822/17929574533740.jpg?v=639288778580330000",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Masculino clássico, com sofisticação nobre e atemporal."
+    },
+    {
+        nome: "Ajmal Amber Wood EDP 50ml",
+        preco: 399.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1159590-800-800/17588360598985.jpg?v=638971859650370000",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Âmbar e madeiras em um perfil quente, acolhedor e refinado."
+    },
+    {
+        nome: "Ajmal Aurum EDP 100ml",
+        preco: 429.00,
+        imagem: "https://cellshop.com.br/wp-content/uploads/2026/06/perfume-ajmal-aurum-edp-75ml-feminino-1-scaled.jpg",
+        categoria: "principais",
+        genero: "feminino",
+        descricao: "Feminina luxuosa, com brilho dourado e presença elegante."
+    },
+
+    // ================= ARD AL ZAAFARAN =================
+    {
+        nome: "Ard Al Zaafaran Dirham EDP 100ml",
+        preco: 189.00,
+        imagem: "https://m.media-amazon.com/images/I/61801r17gRL.jpg",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Oriental de assinatura acolhedora, com elegância e bom custo-benefício."
+    },
+    {
+        nome: "Ard Al Zaafaran Mousuf EDP 100ml",
+        preco: 189.00,
+        imagem: "https://m.media-amazon.com/images/I/616j-nJKjBL._AC_UF1000,1000_QL80_.jpg",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Sofisticação árabe em perfil intenso e duradouro."
+    },
+    {
+        nome: "Ard Al Zaafaran Ameer Al Oud EDP 100ml",
+        preco: 199.00,
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw_Nf6r2CwivXHHZrJbkKeklzA5jcg107Pv9XmRN_-Ve1dts4KMb56BR4Z&s=10",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Oud nobre e envolvente, pensado para quem aprecia tradição oriental."
+    },
+
+    // ================= ORIENTICA =================
+    {
+        nome: "Orientica Amber Rouge EDP 80ml",
+        preco: 349.00,
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk2NB7Qdby0Y3vjumWMpmIyGkztZZKQHBBc9zMrwfcVXVXvwCHz3QhQ5Di&s=10",
+        categoria: "novidades",
+        genero: "unissex",
+        descricao: "Âmbar luminoso e quente, com elegância sofisticada."
+    },
+    {
+        nome: "Orientica Royal Amber EDP 80ml",
+        preco: 349.00,
+        imagem: "https://worldfree.vtexassets.com/arquivos/ids/166269/perfume_orientica_luxury_collection_royal_amber_edp_100ml_unisex_6101_1_4f20a9a23be02c6a313b1f5ba4ea8253.jpg?v=638494125364700000",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Âmbar de ar nobre, em um perfil quente e luxuoso."
+    },
+    {
+        nome: "Orientica Velvet Gold EDP 80ml",
+        preco: 349.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/598861-800-800/6291109270584-VELVET-GOLD-CAIXA.jpg?v=638467215095770000",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Aveludado e elegante, com brilho dourado e presença envolvente."
+    },
+    {
+        nome: "Orientica Oud Saffron EDP 80ml",
+        preco: 379.00,
+        imagem: "https://acdn-us.mitiendanube.com/stores/005/743/289/products/orientica-oud-saffron-edp-80ml-9c242e769d63ac827a17510461725506-1024-1024.jpg",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Oud e açafrão em uma assinatura oriental opulenta."
+    },
+    {
+        nome: "Orientica Azure Aoud EDP 80ml",
+        preco: 349.00,
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFFop5W2HiLR5HXBsAyYdMPsY-aT5YnlT4x7lmmlnFqA&s=10",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Oud com frescor azulado, em um perfil moderno e sofisticado."
+    },
+
+    // ================= AMOUAGE =================
+    {
+        nome: "Amouage Interlude Man EDP 100ml",
+        preco: 2490.00,
+        imagem: "https://allbeauty.com/cdn/shop/files/1170811-1170811-1170811c-132098-220136.jpg?v=1792619878&width=1445",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Uma obra de alta perfumaria omani: complexa, enfumaçada e profundamente marcante."
+    },
+    {
+        nome: "Amouage Reflection Man EDP 100ml",
+        preco: 2290.00,
+        imagem: "https://acdn-us.mitiendanube.com/stores/001/167/965/products/257518-4-260440b8cded6ea35817467038723425-1024-1024.webp",
+        categoria: "principais",
+        genero: "masculino",
+        descricao: "Elegância floral e atemporal, na linguagem da alta perfumaria árabe."
+    },
+    {
+        nome: "Amouage Honour Woman EDP 100ml",
+        preco: 2490.00,
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/3095755-800-800/17879187956064.jpg?v=639243018794700000",
+        categoria: "principais",
+        genero: "feminino",
+        descricao: "Feminina e majestosa, um floral luxuoso de presença inesquecível."
+    },
+    {
+        nome: "Amouage Epic Woman EDP 100ml",
+        preco: 2490.00,
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG1xIpXLcMUnjkU-2AVRfsozmLC2v2mHLPCRoaAqZ10edhNp55V7bRuGcj&s=10",
+        categoria: "principais",
+        genero: "feminino",
+        descricao: "Opulenta e sofisticada, com a assinatura de luxo da casa Amouage."
+    },
+
+    // ================= ARABIAN OUD =================
+    {
+        nome: "Arabian Oud Kalemat EDP 100ml",
+        preco: 499.00,
+        imagem: "https://fimgs.net/mdimg/perfume/o.21623.jpg",
+        categoria: "principais",
+        genero: "unissex",
+        descricao: "Uma fragrância oriental de requinte, celebrando a tradição do oud."
+    },
+
 
     // ================= LATTAFA =================
     perfume("Lattafa Asad EDP 100ml", 229.00, "masculino", "maisVendidos", "Intenso e envolvente: pimenta-preta, abacaxi, tabaco, baunilha e patchouli compõem um masculino de grande projeção."),
