@@ -1,0 +1,53 @@
+CREATE DATABASE IF NOT EXISTS yara_loja CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE yara_loja;
+
+CREATE TABLE usuarios (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(120) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    telefone VARCHAR(15) NOT NULL,
+    senha_hash VARCHAR(255) NOT NULL,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+CREATE TABLE produtos (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(150) NOT NULL,
+    preco DECIMAL(10,2) NOT NULL,
+    imagem VARCHAR(255) NOT NULL,
+    secao ENUM('principais','novidades','maisVendidos') NOT NULL DEFAULT 'principais',
+    estoque INT NOT NULL DEFAULT 100,
+    ativo TINYINT(1) NOT NULL DEFAULT 1,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_secao (secao, ativo)
+) ENGINE=InnoDB;
+
+CREATE TABLE pedidos (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT UNSIGNED NOT NULL,
+    forma_pagamento ENUM('vista','prazo') NOT NULL,
+    desconto_percentual DECIMAL(5,2) NOT NULL DEFAULT 0,
+    subtotal DECIMAL(10,2) NOT NULL,
+    total DECIMAL(10,2) NOT NULL,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+) ENGINE=InnoDB;
+
+CREATE TABLE itens_pedido (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    pedido_id INT UNSIGNED NOT NULL,
+    produto_id INT UNSIGNED NOT NULL,
+    nome_produto VARCHAR(150) NOT NULL,
+    preco_unitario DECIMAL(10,2) NOT NULL,
+    quantidade INT UNSIGNED NOT NULL,
+    FOREIGN KEY (pedido_id) REFERENCES pedidos(id) ON DELETE CASCADE,
+    FOREIGN KEY (produto_id) REFERENCES produtos(id)
+) ENGINE=InnoDB;
+
+INSERT INTO produtos (nome, preco, imagem, secao) VALUES
+('Oud Royal', 289.90, 'img/oud-royal.png', 'principais'),
+('Amber Nights', 249.90, 'img/amber-nights.png', 'principais'),
+('Rose Sultan', 319.90, 'img/rose-sultan.png', 'novidades'),
+('Musk Al Layl', 199.90, 'img/musk.png', 'novidades'),
+('Sahara Gold', 359.90, 'img/sahara-gold.png', 'maisVendidos'),
+('Jasmine Majlis', 229.90, 'img/jasmine.png', 'maisVendidos');
